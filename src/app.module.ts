@@ -3,7 +3,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { WebScraperModule } from './common/web-scraper/web-scraper.module';
+import { WebScraperModule } from './modules/web-scraper/web-scraper.module';
 
 @Module({
   imports: [
