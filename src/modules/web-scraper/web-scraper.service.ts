@@ -22,17 +22,20 @@ export class WebScraperService {
             if (res.statusCode == 200) {
                 // If webpage does not allow others to embed an iframe with their website in it.
                 if (
-                    res.headers['x-frame-options'] == 'SAMEORIGIN' ||
-                    res.headers['x-frame-options'] == 'DENY'
+                    res.headers['x-frame-options']?.toString().toUpperCase() == 'SAMEORIGIN' ||
+                    res.headers['x-frame-options']?.toString().toUpperCase() == 'DENY'
                 ) {
+                    console.log('enter frame err');
                     throw new Error(errProtectiveMsg);
                 }
                 resDto.data.content = res.statusMessage;
                 return resDto;
             } else {
+                console.log('enter global err');
                 throw new Error(errGlobalMsg);
             }
         }).catch(err => {
+            console.log(err.message);
             resDto.data.success = false;
             resDto.data.errMsg = err.message === errProtectiveMsg ? errProtectiveMsg : errGlobalMsg;
             return resDto;

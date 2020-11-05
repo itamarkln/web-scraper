@@ -7,7 +7,6 @@ export class WebScraperController {
 
     @Post('url/validate')
     async isWebpageExists(@Body('url') url: string) {
-        Logger.log(`url: ${url}`);
         return await this.webScraperService.isWebpageExists(url);
     }
 
