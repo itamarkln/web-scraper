@@ -10,9 +10,16 @@ export class WebScraperController {
         return await this.webScraperService.isWebpageExists(url);
     }
 
-    @Get('data')
-    async fetchHTMLData(@Param('url') url: string) {
-        Logger.log(`url: ${url}`);
-        return await this.webScraperService.fetchHTMLData(url);
+    // @Post('html/data')
+    // async fetchHTMLData(@Body('url') url: string, @Body('data') data: any) {
+    //     // return await this.webScraperService.fetchHTMLData(url, data);
+    // }
+
+    @Post('data')
+    async fetchScrapedData(
+        @Body('url') url: string,
+        @Body('data') data: Array<any>
+    ) {
+        return await this.webScraperService.fetchScrapedData(url, data);
     }
 }

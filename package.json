@@ -28,6 +28,8 @@
     "cheerio": "^1.0.0-rc.3",
     "needle": "^2.5.2",
     "node-fetch": "^2.6.1",
+    "puppeteer": "^5.4.1",
+    "puppeteer-core": "^5.4.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3"
