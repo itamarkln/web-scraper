@@ -8,10 +8,8 @@ export class PuppeteerService {
     async launchBrowser() {
         return await puppeteer.launch({
             args: [
-                '--disable-dev-shm-usage',
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
-                '--disable-extensions'
             ]
         });
     }
